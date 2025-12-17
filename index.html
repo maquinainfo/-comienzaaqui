@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   BookOpen, 
-  // Cross, // Eliminamos esta importación que causa el error
   ChevronRight, 
   ArrowLeft, 
   Heart, 
@@ -16,7 +15,7 @@ import {
   Scroll, 
   User, 
   Zap, 
-  Map
+  Map as MapIcon // Renomeado para evitar conflito com o 'Map' do JavaScript global
 } from 'lucide-react';
 
 /**
@@ -179,7 +178,7 @@ const MYSTERIES_DATA = {
     accent: "bg-amber-700",
     bg: "bg-amber-50",
     items: [
-      { label: "1º Misterio", name: "La Resurrección", fruit: "Fe viva", desc: "La victoria definitiva sobre la muerte. Meditamos en la esperanza de nuestra propia resurrección." },
+      { label: "1º Misterio", name: "La Resurrección", fruit: "Fe viva", desc: "La victory definitiva sobre la muerte. Meditamos en la esperanza de nuestra propia resurrección." },
       { label: "2º Misterio", name: "La Ascensión", fruit: "Deseo del Cielo", desc: "Jesús asciende al Padre. Meditamos en que nuestra patria definitiva no está en la tierra, sino en el Cielo." },
       { label: "3º Misterio", name: "Pentecostés", fruit: "Celo apostólico", desc: "El Espíritu Santo desciende sobre la Iglesia. Meditamos en el fuego divino que nos impulsa a evangelizar." },
       { label: "4º Misterio", name: "La Asunción", fruit: "Gravedad de alma", desc: "María es elevada al cielo en cuerpo y alma. Meditamos en el premio de una vida dedicada enteramente a Dios." },
@@ -371,7 +370,7 @@ const App = () => {
       return (
         <div className="space-y-6 animate-in fade-in duration-500">
           <div className="bg-blue-950 p-10 rounded-[3.5rem] text-center shadow-xl border-b-4 border-blue-400">
-            <Map className="text-blue-300 mx-auto mb-4" size={48} />
+            <MapIcon className="text-blue-300 mx-auto mb-4" size={48} />
             <h3 className="text-3xl font-serif font-bold text-blue-100">Ruta de Oración</h3>
             <p className="text-blue-200/70 text-xs mt-3 italic">"Cada cuenta es un paso hacia el encuentro con Cristo."</p>
           </div>
