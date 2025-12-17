@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { 
   BookOpen, 
+  Cross, 
   ChevronRight, 
   ArrowLeft, 
   Heart, 
@@ -15,33 +16,8 @@ import {
   Scroll, 
   User, 
   Zap, 
-  Map as MapIcon // Renomeado para evitar conflito com o 'Map' do JavaScript global
+  Map
 } from 'lucide-react';
-
-/**
- * COMPONENTE PERSONALIZADO: CRUZ CRISTIANA
- * Lucide-react no tiene un icono de cruz latina, así que lo creamos aquí
- * para evitar el error de importación.
- */
-const ChristianCross = ({ size = 24, className = "" }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    {/* Línea vertical */}
-    <path d="M12 2v20" />
-    {/* Línea horizontal (ubicada más arriba para forma de cruz latina) */}
-    <path d="M7 8h10" />
-  </svg>
-);
 
 /**
  * DATOS DE PREPARACIÓN (CORAZÓN Y ESPÍRITU)
@@ -99,7 +75,7 @@ const PILGRIM_DATA = [
     id: 'credo',
     title: "El Credo Apostólico",
     subtitle: "El sello de la fe",
-    icon: <ChristianCross className="text-amber-900" />, // Usamos el componente personalizado
+    icon: <Cross className="text-amber-900" />,
     desc: "Recitado sobre el crucifijo del rosario, es la declaración de nuestra identidad católica heredada de los Apóstoles. Cada palabra es una piedra firme sobre la que construimos nuestra meditación. Es el resumen de toda la Historia de la Salvación que estamos a punto de contemplar."
   },
   {
@@ -180,7 +156,7 @@ const MYSTERIES_DATA = {
     items: [
       { label: "1º Misterio", name: "La Resurrección", fruit: "Fe viva", desc: "La victory definitiva sobre la muerte. Meditamos en la esperanza de nuestra propia resurrección." },
       { label: "2º Misterio", name: "La Ascensión", fruit: "Deseo del Cielo", desc: "Jesús asciende al Padre. Meditamos en que nuestra patria definitiva no está en la tierra, sino en el Cielo." },
-      { label: "3º Misterio", name: "Pentecostés", fruit: "Celo apostólico", desc: "El Espíritu Santo desciende sobre la Iglesia. Meditamos en el fuego divino que nos impulsa a evangelizar." },
+      { label: "3º Misterio", name: "Pentecostés", fruit: "Zelo apostólico", desc: "El Espíritu Santo desciende sobre la Iglesia. Meditamos en el fuego divino que nos impulsa a evangelizar." },
       { label: "4º Misterio", name: "La Asunción", fruit: "Gravedad de alma", desc: "María es elevada al cielo en cuerpo y alma. Meditamos en el premio de una vida dedicada enteramente a Dios." },
       { label: "5º Misterio", name: "La Coronación", fruit: "Confianza filial", desc: "María es coronada Reina. Meditamos en su poderosa intercesión como Medianera de todas las gracias." }
     ]
@@ -208,7 +184,7 @@ const PRAYERS_DATA = [
   {
     id: 'credo',
     title: "Credo de los Apóstoles",
-    icon: <ChristianCross className="text-amber-800" />, // Usamos el componente personalizado
+    icon: <Cross className="text-amber-800" />,
     text: "Creo en Dios, Padre Todopoderoso, Creador del cielo y de la tierra. Creo en Jesucristo, su único Hijo, Nuestro Señor, que fue concebido por obra y gracia del Espíritu Santo, nació de Santa María Virgen, padeció bajo el poder de Poncio Pilato, fue crucificado, muerto y sepultado, descendió a los infiernos, al tercer día resucitó de entre los muertos, subió a los cielos y está sentado a la derecha de Dios, Padre Todopoderoso. Desde allí ha de venir a juzgar a vivos y muertos. Creo en el Espíritu Santo, la santa Iglesia católica, la comunión de los santos, el perdón de los pecados, la resurrección de la carne y la vida eterna. Amén."
   },
   {
@@ -370,7 +346,7 @@ const App = () => {
       return (
         <div className="space-y-6 animate-in fade-in duration-500">
           <div className="bg-blue-950 p-10 rounded-[3.5rem] text-center shadow-xl border-b-4 border-blue-400">
-            <MapIcon className="text-blue-300 mx-auto mb-4" size={48} />
+            <Map className="text-blue-300 mx-auto mb-4" size={48} />
             <h3 className="text-3xl font-serif font-bold text-blue-100">Ruta de Oración</h3>
             <p className="text-blue-200/70 text-xs mt-3 italic">"Cada cuenta es un paso hacia el encuentro con Cristo."</p>
           </div>
@@ -583,7 +559,7 @@ const App = () => {
           </div>
         </div>
         <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-amber-100 border-2 border-amber-200 flex items-center justify-center text-amber-800 shadow-inner">
-          <ChristianCross size={28} /> {/* Usamos el componente personalizado */}
+          <Cross size={28} />
         </div>
       </header>
 
@@ -611,7 +587,7 @@ const App = () => {
           className="relative -mt-16 group outline-none"
         >
           <div className="w-20 h-20 bg-amber-900 rounded-[2.5rem] flex items-center justify-center border-[6px] border-[#fcfbf7] shadow-2xl active:scale-90 transition-transform group-hover:bg-amber-800">
-             <ChristianCross size={32} className="text-white" /> {/* Usamos el componente personalizado */}
+             <Cross size={32} className="text-white" />
           </div>
           <span className="text-[9px] md:text-[10px] font-extrabold text-amber-900 absolute -bottom-8 left-1/2 -translate-x-1/2 uppercase tracking-[0.2em] whitespace-nowrap">Rezar</span>
         </a>
