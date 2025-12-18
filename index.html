@@ -20,7 +20,8 @@ import {
 } from 'lucide-react';
 
 /**
- * DATOS DE PREPARACIÓN (CORAZÓN Y ESPÍRITU)
+ * DADOS DE PREPARAÇÃO (CORAZÓN Y ESPÍRITU)
+ * Conteúdo em Espanhol conforme solicitado.
  */
 const PREP_DATA = [
   {
@@ -61,7 +62,7 @@ const PREP_DATA = [
 ];
 
 /**
- * DATOS DE LA GUÍA DEL PEREGRINO
+ * DADOS DO GUIA DO PEREGRINO
  */
 const PILGRIM_DATA = [
   {
@@ -116,7 +117,7 @@ const PILGRIM_DATA = [
 ];
 
 /**
- * DATOS DE LOS MISTERIOS
+ * DADOS DOS MISTÉRIOS
  */
 const MYSTERIES_DATA = {
   gozosos: {
@@ -154,7 +155,7 @@ const MYSTERIES_DATA = {
     accent: "bg-amber-700",
     bg: "bg-amber-50",
     items: [
-      { label: "1º Misterio", name: "La Resurrección", fruit: "Fe viva", desc: "La victory definitiva sobre la muerte. Meditamos en la esperanza de nuestra propia resurrección." },
+      { label: "1º Misterio", name: "La Resurrección", fruit: "Fe viva", desc: "La victoria definitiva sobre la muerte. Meditamos en la esperanza de nuestra propia resurrección." },
       { label: "2º Misterio", name: "La Ascensión", fruit: "Deseo del Cielo", desc: "Jesús asciende al Padre. Meditamos en que nuestra patria definitiva no está en la tierra, sino en el Cielo." },
       { label: "3º Misterio", name: "Pentecostés", fruit: "Zelo apostólico", desc: "El Espíritu Santo desciende sobre la Iglesia. Meditamos en el fuego divino que nos impulsa a evangelizar." },
       { label: "4º Misterio", name: "La Asunción", fruit: "Gravedad de alma", desc: "María es elevada al cielo en cuerpo y alma. Meditamos en el premio de una vida dedicada enteramente a Dios." },
@@ -178,7 +179,7 @@ const MYSTERIES_DATA = {
 };
 
 /**
- * DATOS DE LAS ORACIONES (TESORO DE GRACIA)
+ * DADOS DAS ORAÇÕES (TESORO DE GRACIA)
  */
 const PRAYERS_DATA = [
   {
@@ -223,7 +224,7 @@ const App = () => {
   const [view, setView] = useState({ section: 'menu', sub: null, detail: null });
 
   /**
-   * Navegación para atrás
+   * Navegação para trás
    */
   const navigateBack = () => {
     if (view.detail) setView({ ...view, detail: null });
@@ -232,7 +233,7 @@ const App = () => {
   };
 
   /**
-   * COMPONENTE: MENÚ PRINCIPAL
+   * COMPONENTE: MENU PRINCIPAL
    */
   const MainMenu = () => (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
@@ -274,7 +275,7 @@ const App = () => {
   );
 
   /**
-   * COMPONENTE: VISTA DE PREPARACIÓN (CORAZÓN Y ESPÍRITU)
+   * COMPONENTE: VISTA DE PREPARAÇÃO (CORAZÓN Y ESPÍRITU)
    */
   const PrepView = () => {
     if (!view.detail) {
@@ -404,7 +405,7 @@ const App = () => {
   };
 
   /**
-   * COMPONENTE: VISTA DE MISTERIOS
+   * COMPONENTE: VISTA DE MISTÉRIOS
    */
   const MysteriesView = () => {
     if (!view.sub) {
@@ -473,7 +474,7 @@ const App = () => {
   };
 
   /**
-   * COMPONENTE: VISTA TESORO DE GRACIA (ORACIONES)
+   * COMPONENTE: VISTA TESORO DE GRACIA (ORAÇÕES)
    */
   const PrayersView = () => {
     if (!view.detail) {
@@ -563,7 +564,7 @@ const App = () => {
         </div>
       </header>
 
-      {/* ÁREA DE CONTENIDO RESPONSIVA */}
+      {/* ÁREA DE CONTEÚDO RESPONSIVA */}
       <main className="max-w-2xl mx-auto p-4 md:p-10">
         {view.section === 'menu' && <MainMenu />}
         {view.section === 'prep' && <PrepView />}
@@ -572,14 +573,14 @@ const App = () => {
         {view.section === 'oracoes' && <PrayersView />}
       </main>
 
-      {/* NAVEGACIÓN INFERIOR (ESTILO APP) */}
+      {/* NAVEGAÇÃO INFERIOR (ESTILO APP) */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t-2 border-amber-100 px-6 md:px-12 py-5 md:py-6 flex justify-around items-center z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.08)]">
         <button onClick={() => setView({section: 'menu', sub: null, detail: null})} className={`flex flex-col items-center gap-1.5 md:gap-2 transition-all ${view.section === 'menu' ? 'text-amber-800 scale-110' : 'text-gray-300 hover:text-amber-400'}`}>
           <Star size={24} fill={view.section === 'menu' ? 'currentColor' : 'none'} />
-          <span className="text-[9px] md:text-[10px] font-extrabold uppercase tracking-widest">Inicio</span>
+          <span className="text-[9px] md:text-[10px] font-extrabold uppercase tracking-widest">Início</span>
         </button>
         
-        {/* BOTÓN REZAR: REDIRECCIONA AL LINK EXTERNO */}
+        {/* BOTÃO REZAR: REDIRECIONA PARA O LINK EXTERNO */}
         <a 
           href="https://santorosarioes.netlify.app/" 
           target="_blank" 
@@ -600,5 +601,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
-        
